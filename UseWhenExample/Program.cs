@@ -3,7 +3,8 @@ var app = builder.Build();
 
 app.UseWhen(
     context => context.Request.Query.ContainsKey("username"),
-    app => {
+    app => 
+    {
         app.Use(async (context, next) =>
         {
             await context.Response.WriteAsync("Hello from Middleware branch");
